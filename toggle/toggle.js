@@ -136,7 +136,7 @@ function advance(dt) {
   now += dt;
   const due = timers.filter((q) => q.at <= now).sort((a, b) => a.at - b.at); if (due.length) for (const q of due) timers.splice(timers.indexOf(q), 1);
   for (const q of due) q.f();
-  for (const f of frames) f(dt);
+  for (const f of frames) try { f(dt); } catch (e) { console.error(e); }   // one broken component must not stop the clock for the rest
   tick(dt);
 }
 function loop(ms) {

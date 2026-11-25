@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sakuga Dashboard Kit</title>
+<style>
+  :root { --page: #fbfaff; --text: #1d1a4a; --mute: #8580b0; --line: #dcdaf0; --chip: #f4f3fc; }
+  * { box-sizing: border-box; }
+  html { overflow-x: clip; background: var(--page); }
+  body { margin: 0; color: var(--text); background: var(--page); font: 500 15px/1.45 -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: clip; }
+  a { color: inherit; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 28px 16px 90px; }
+  h1 { margin: 0; font: italic 900 34px/1.05 "Avenir Next", "Nunito", -apple-system, "Segoe UI", system-ui, sans-serif; letter-spacing: -.02em; }
+  h1 em { font-style: inherit; color: #ff5fa8; }
+  .lede { max-width: 700px; margin: 8px 0 0; color: var(--mute); }
+  nav.cats { position: sticky; top: 0; z-index: 10; display: flex; gap: 6px; overflow-x: auto; margin: 18px -16px 0; padding: 10px 16px; background: color-mix(in srgb, var(--page) 88%, transparent); backdrop-filter: blur(6px); }
+  nav.cats a { flex: none; padding: 5px 12px 6px; border: 2.5px solid var(--text); border-radius: 999px; background: #fff; box-shadow: 2px 3px 0 #b8b3ff; font: italic 800 13px/1 "Avenir Next", "Nunito", sans-serif; text-decoration: none; }
+  nav.cats a:hover { background: #8f8df7; color: #fff; }
+  h2.cat { margin: 44px 0 4px; font: italic 900 24px/1.1 "Marker Felt", "Chalkboard SE", "Comic Sans MS", sans-serif; scroll-margin-top: 64px; }
+  h2.cat small { margin-left: 8px; color: var(--mute); font: 600 13px/1 -apple-system, sans-serif; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 18px; margin-top: 12px; grid-auto-flow: dense; }
+  .card { display: flex; flex-direction: column; min-width: 0; border: 1.5px solid var(--line); border-radius: 18px; background: #fff; }
+  .card.wide { grid-column: span 2; }
+  .card h3 { margin: 0; padding: 12px 14px 0; font-size: 13px; font-weight: 700; font-family: ui-monospace, Menlo, monospace; }
+  .card .how { margin: 2px 0 0; padding: 0 14px; color: var(--mute); font-size: 12.5px; }
+  .stage { flex: 1; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 16px; min-height: 210px; padding: 26px 16px; }
+  .said { min-height: 1.45em; margin: 0; padding: 0 14px 12px; color: var(--mute); font-size: 12.5px; text-align: center; }
+  @media (max-width: 680px) { .card.wide { grid-column: auto; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Sakuga <em>Dashboard</em> Kit</h1>
+  <p class="lede">A hundred dashboard components that react like anime: numbers that roll on springs, charts that land with impact frames, and manga sound effects when something happens. Built on the same core as the twelve controls.</p>
+  <nav class="cats" id="cats"></nav>
+  <main id="cat"></main>
+</div>
+<script src="catalog.js"></script>
+<script src="../button/button.js"></script>
+<script src="../toggle/toggle.js"></script>
+<script src="../slider/slider.js"></script>
+<script src="../checkbox/checkbox.js"></script>
+<script src="../radio/radio.js"></script>
+<script src="../input/input.js"></script>
+<script src="../tabs/tabs.js"></script>
+<script src="../progress/progress.js"></script>
+<script src="../rating/rating.js"></script>
+<script src="../toast/toast.js"></script>
+<script src="../tooltip/tooltip.js"></script>
+<script>
+// load every category file the catalog names, then lay the catalog out
+const FILES = ['stats', 'charts', 'data', 'nav', 'feedback', 'inputs', 'people', 'widgets', 'layout', 'game'];
+const load = (f) => new Promise((r) => { const s = document.createElement('script'); s.src = `../dash/${f}.js`; s.onload = s.onerror = r; document.head.append(s); });
+(async () => {
+  for (const f of FILES) await load(f);
+  const cats = [...new Set(CATALOG.map((c) => c.cat))], main = document.getElementById('cat'), nav = document.getElementById('cats');
+  for (const cat of cats) {
+    const id = cat.toLowerCase().replace(/\W+/g, '-'), items = CATALOG.filter((c) => c.cat === cat);
+    nav.insertAdjacentHTML('beforeend', `<a href="#${id}">${cat}</a>`);
+    main.insertAdjacentHTML('beforeend', `<h2 class="cat" id="${id}">${cat}<small>${items.length}</small></h2><div class="grid">${items.map((it) => `<section class="card${it.wide ? ' wide' : ''}"><h3>&lt;${it.tag}&gt;</h3><p class="how">${it.how}</p><div class="stage">${it.html}</div><p class="said" aria-live="polite"></p></section>`).join('')}</div>`);
+  }
+  document.title = `Sakuga Dashboard Kit · ${CATALOG.length} components`;
+  // say what each component reports
+  for (const card of document.querySelectorAll('.card')) { const said = card.querySelector('.said'); for (const t of ['change', 'select', 'sakuga:done']) card.addEventListener(t, (e) => { if (e.target.tagName?.startsWith('SAKUGA-')) said.textContent = `${t}${e.detail != null ? ': ' + JSON.stringify(e.detail).slice(0, 60) : e.target.value != null ? ': ' + e.target.value : ''}`; }); }
+  // live data for the demo
+  const q = (s) => document.querySelector(`[data-live=${s}]`);
+  setInterval(() => { q('stat')?.set(q('stat').v + Math.round((Math.random() - 0.3) * 4000)); q('delta')?.set((Math.random() * 40 - 15).toFixed(1)); q('spark')?.push(Math.random() * 20 + 5); const b = q('badge'); if (b) b.count = (b.count % 12) + 1; }, 2200);
+  window.dispatchEvent(new Event('catalog-ready'));
+})();
+</script>
+<script src="live.js"></script>
+</body>
+</html>
