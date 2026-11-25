@@ -71,3 +71,13 @@ C('People', 'sakuga-reactions', 'Tap a reaction.', '<sakuga-reactions></sakuga-r
 C('People', 'sakuga-poll', 'Vote once.', '<sakuga-poll question="Best frame rate?"><option votes="12">On twos</option><option votes="7">On ones</option><option votes="3">On threes</option></sakuga-poll>');
 C('People', 'sakuga-vote', 'Up or down.', '<sakuga-vote score="42"></sakuga-vote>');
 C('People', 'sakuga-follow', 'Follow, unfollow.', '<sakuga-follow></sakuga-follow>');
+C('Widgets', 'sakuga-weather', 'Click to change the weather.', '<sakuga-weather kind="storm" temp="18"></sakuga-weather>');
+C('Widgets', 'sakuga-schedule', 'The now line rides the rail; click an event.', '<sakuga-schedule now="12.3"></sakuga-schedule>');
+C('Widgets', 'sakuga-todo', 'Tick them all off.', '<sakuga-todo></sakuga-todo>');
+C('Widgets', 'sakuga-kanban', 'Drag a card to another column.', '<sakuga-kanban style="width:100%"></sakuga-kanban>', true);
+C('Widgets', 'sakuga-player', 'Press play.', '<sakuga-player></sakuga-player>');
+C('Widgets', 'sakuga-pomodoro', 'Start it (this demo minute runs six times fast).', '<sakuga-pomodoro minutes="1" speed="6"></sakuga-pomodoro>');
+C('Widgets', 'sakuga-battery', 'Click to plug it in.', '<sakuga-battery value="18"></sakuga-battery>');
+C('Widgets', 'sakuga-status', 'Services go up and down by themselves.', '<sakuga-status demo></sakuga-status>');
+C('Widgets', 'sakuga-note', 'Hover, edit the text, or tear it off.', '<sakuga-note></sakuga-note>');
+C('Widgets', 'sakuga-map', 'Click a pin. Double-click to drop them again.', '<sakuga-map></sakuga-map>');
