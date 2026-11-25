@@ -81,3 +81,13 @@ C('Widgets', 'sakuga-battery', 'Click to plug it in.', '<sakuga-battery value="1
 C('Widgets', 'sakuga-status', 'Services go up and down by themselves.', '<sakuga-status demo></sakuga-status>');
 C('Widgets', 'sakuga-note', 'Hover, edit the text, or tear it off.', '<sakuga-note></sakuga-note>');
 C('Widgets', 'sakuga-map', 'Click a pin. Double-click to drop them again.', '<sakuga-map></sakuga-map>');
+C('Layout', 'sakuga-card', 'Move the pointer over it.', '<sakuga-card heading="Quarterly" interactive style="width:240px">Tilt me. Click me.</sakuga-card>');
+C('Layout', 'sakuga-panel', 'Refresh or minimise.', '<sakuga-panel heading="Renders" style="width:250px"><sakuga-meter value="7"></sakuga-meter></sakuga-panel>');
+C('Layout', 'sakuga-divider', 'Draws in when scrolled to; double-click to redraw.', '<sakuga-divider label="Section break"></sakuga-divider>');
+C('Layout', 'sakuga-carousel', 'Arrows, dots or swipe.', '<sakuga-carousel autoplay><div style="padding:30px;font:italic 900 22px sans-serif;text-align:center">Slide one ★</div><div style="padding:30px;font:italic 900 22px sans-serif;text-align:center;background:#ffe0ef">Slide two ◆</div><div style="padding:30px;font:italic 900 22px sans-serif;text-align:center;background:#e4e2ff">Slide three ●</div></sakuga-carousel>');
+C('Layout', 'sakuga-ticker', 'Hover to slow it; values update live.', '<sakuga-ticker demo></sakuga-ticker>', true);
+C('Layout', 'sakuga-kbd', 'Type K, S or press Space.', '<sakuga-kbd>⌘</sakuga-kbd><sakuga-kbd>K</sakuga-kbd><sakuga-kbd>S</sakuga-kbd><sakuga-kbd key="space">Space</sakuga-kbd>');
+C('Layout', 'sakuga-copy', 'Copy the command.', '<sakuga-copy text="npx shadcn add sakuga-vfx"></sakuga-copy>');
+C('Layout', 'sakuga-icon-button', 'Plain ones spin; toggles switch.', '<sakuga-icon-button label="Refresh">↻</sakuga-icon-button><sakuga-icon-button label="Star" toggle>★</sakuga-icon-button><sakuga-icon-button label="Pin" toggle pressed>📌</sakuga-icon-button>');
+C('Layout', 'sakuga-callout', 'Click to say it again.', '<sakuga-callout>Psst! Revenue is up 24% this week!</sakuga-callout><sakuga-callout shout>Deadline TODAY!</sakuga-callout>');
+C('Layout', 'sakuga-split', 'Drag the gutter and let go.', '<sakuga-split><b slot="start">Filters</b><span slot="end">Results go here.</span></sakuga-split>', true);
