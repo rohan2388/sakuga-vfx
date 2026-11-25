@@ -51,3 +51,13 @@ C('Feedback', 'sakuga-modal', 'Open it, then ship it.', '<sakuga-modal></sakuga-
 C('Feedback', 'sakuga-drawer', 'Open it.', '<sakuga-drawer><sakuga-checkbox>Only mine</sakuga-checkbox><sakuga-checkbox>Include archived</sakuga-checkbox></sakuga-drawer>');
 C('Feedback', 'sakuga-bell', 'It rings when something comes in. Click to read.', '<sakuga-bell demo></sakuga-bell>');
 C('Feedback', 'sakuga-hold', 'Keep it pressed down.', '<sakuga-hold>Hold to delete</sakuga-hold>');
+C('Inputs', 'sakuga-search', 'Type, then press Enter.', '<sakuga-search placeholder="Search reports…"></sakuga-search>');
+C('Inputs', 'sakuga-number', 'Press − and +; try going past the limits.', '<sakuga-number value="3" min="0" max="10" label="Seats"></sakuga-number>');
+C('Inputs', 'sakuga-datepicker', 'Flip months, pick a day.', '<sakuga-datepicker></sakuga-datepicker>');
+C('Inputs', 'sakuga-color', 'Pick a colour.', '<sakuga-color></sakuga-color>');
+C('Inputs', 'sakuga-range', 'Drag both thumbs into each other.', '<sakuga-range prefix="$" low="20" high="70"></sakuga-range>');
+C('Inputs', 'sakuga-chips', 'Type a tag and press Enter; Backspace removes.', '<sakuga-chips></sakuga-chips>');
+C('Inputs', 'sakuga-otp', 'Type 1234 (anything else shakes).', '<sakuga-otp expect="1234"></sakuga-otp>');
+C('Inputs', 'sakuga-textarea', 'Type past the limit.', '<sakuga-textarea maxlength="60"></sakuga-textarea>');
+C('Inputs', 'sakuga-upload', 'Drop a file on it, or click.', '<sakuga-upload></sakuga-upload>');
+C('Inputs', 'sakuga-knob', 'Drag up or down, scroll, or use arrows.', '<sakuga-knob value="40"></sakuga-knob>');
