@@ -1,7 +1,7 @@
 // Stamp core.js into every component file, and the toggle's frames into toggle.js, so each file works on its own.
 //   node tools/build.mjs          (run it after editing core.js or toggle/frames.webp)
 //   node tools/build.mjs --check  (exits 1 if any file is out of date, and changes nothing)
-import { readFileSync, writeFileSync, copyFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, copyFileSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -21,6 +21,14 @@ for (const n of NAMES) {
   let src = between(was, 'sakuga core', core, file);
   if (n === 'toggle') src = between(src, 'frames', `const SHEET = '${sheet}';`, file);
   if (src !== was) { stale++; if (!check) writeFileSync(file, src); console.log(`${check ? 'stale' : 'wrote'} ${n}/${n}.js`); }
+}
+// the dashboard components: dash/*.js carry the core and the dashboard kit
+const kit = readFileSync(join(root, 'dash/kit.js'), 'utf8').trim();
+export const DASH = readdirSync(join(root, 'dash')).filter((f) => f.endsWith('.js') && f !== 'kit.js').map((f) => f.slice(0, -3)).sort();
+for (const n of DASH) {
+  const file = join(root, 'dash', n + '.js'), was = readFileSync(file, 'utf8');
+  const src = between(between(was, 'sakuga core', core, file), 'dash kit', kit, file);
+  if (src !== was) { stale++; if (!check) writeFileSync(file, src); console.log(`${check ? 'stale' : 'wrote'} dash/${n}.js`); }
 }
 if (!check) copyFileSync(join(root, 'core.js'), join(root, 'skills/sakuga-vfx/core.js'));
 if (check && stale) process.exit(1);

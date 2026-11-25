@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sakuga Studio Board</title>
+<style>
+  :root { --page: #f6f4ff; --text: #1d1a4a; --mute: #8580b0; }
+  * { box-sizing: border-box; }
+  html { overflow-x: clip; background: var(--page); }
+  body { margin: 0; color: var(--text); background: var(--page) radial-gradient(#d9d5ff 1.2px, transparent 1.3px) 0 0 / 22px 22px; font: 500 15px/1.45 -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", system-ui, sans-serif; overflow-x: clip; }
+  .app { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 18px; max-width: 1400px; margin: 0 auto; padding: 18px 16px 60px; }
+  aside { position: sticky; top: 18px; align-self: start; }
+  main { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; min-width: 0; }
+  .top { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+  .top sakuga-navbar { flex: 1; min-width: 300px; }
+  .row { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(min(270px, 100%), 1fr)); align-items: start; justify-items: center; }
+  .row > * { min-width: 0; max-width: 100%; }
+  .row > sakuga-stat, .row > sakuga-hp, .row > sakuga-xp, .row > sakuga-leaderboard, .row > sakuga-feed { width: 100%; }
+  .tile { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: center; }
+  .hero { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; }
+  .hero h1 { margin: 0; font: italic 900 30px/1.05 "Avenir Next", "Nunito", sans-serif; letter-spacing: -.02em; }
+  .hero h1 em { font-style: inherit; color: #ff5fa8; }
+  .hero p { margin: 4px 0 0; color: var(--mute); }
+  a.back { color: var(--mute); font-size: 13px; }
+  @media (max-width: 820px) { .app { grid-template-columns: minmax(0, 1fr); } aside { position: static; } aside sakuga-sidebar { display: none; } }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside>
+    <sakuga-sidebar><option icon="◆" selected>Overview</option><option icon="▤" meta="4">Projects</option><option icon="✉" meta="12">Inbox</option><option icon="☺">Team</option><option icon="⚙">Settings</option></sakuga-sidebar>
+  </aside>
+  <main>
+    <div class="top">
+      <sakuga-navbar brand="Studio"><option selected>Today</option><option>Week</option><option>Season</option></sakuga-navbar>
+      <sakuga-command><option icon="＋" meta="N">New cut</option><option icon="⇪" meta="U">Upload frames</option><option icon="☾" meta="T">Toggle theme</option><option icon="⎋" meta="Q">Sign out</option></sakuga-command>
+      <sakuga-bell demo></sakuga-bell>
+      <sakuga-avatar name="Aiko Tanaka" status="online"></sakuga-avatar>
+    </div>
+    <div class="hero">
+      <div><h1>Good morning, <em>Studio!</em></h1><p>Episode 3 is 72% animated. Hit the deadline and the confetti is yours.</p><a class="back" href="./">← the full catalog of 100</a></div>
+      <sakuga-callout>Psst! Signups are up 24% this week!</sakuga-callout>
+    </div>
+    <sakuga-ticker demo></sakuga-ticker>
+    <div class="row">
+      <sakuga-stat label="Revenue" prefix="$" value="48210" id="rev"></sakuga-stat>
+      <sakuga-stat label="Active users" value="12930" id="users"></sakuga-stat>
+      <sakuga-stat label="Frames drawn" value="9412" id="frames"></sakuga-stat>
+      <sakuga-stat label="Avg. FPS" value="23.9" decimals="1" id="fps"></sakuga-stat>
+    </div>
+    <div class="row">
+      <sakuga-line-chart label="Visitors"></sakuga-line-chart>
+      <sakuga-bar-chart label="Cuts per day"></sakuga-bar-chart>
+      <sakuga-donut-chart label="Budget" center="$2.4k"></sakuga-donut-chart>
+    </div>
+    <div class="row">
+      <div class="tile"><sakuga-gauge label="Render farm" value="64" id="cpu"></sakuga-gauge><sakuga-ring label="Episode" value="72" id="ep"></sakuga-ring></div>
+      <sakuga-leaderboard label="Top animators" demo></sakuga-leaderboard>
+      <sakuga-feed demo></sakuga-feed>
+    </div>
+    <div class="row">
+      <sakuga-hp name="Episode 3 deadline" value="1000"></sakuga-hp>
+      <sakuga-xp level="7" value="820"></sakuga-xp>
+      <div class="tile"><sakuga-streak days="6"></sakuga-streak></div>
+    </div>
+    <sakuga-kanban></sakuga-kanban>
+    <div class="row">
+      <sakuga-schedule></sakuga-schedule>
+      <sakuga-todo></sakuga-todo>
+      <sakuga-status demo></sakuga-status>
+      <div class="tile" style="flex-direction:column"><sakuga-weather kind="sunny" temp="24"></sakuga-weather><sakuga-player></sakuga-player></div>
+    </div>
+    <div class="row">
+      <sakuga-heatmap label="Commits"></sakuga-heatmap>
+      <sakuga-radar label="Team skills"></sakuga-radar>
+      <sakuga-funnel label="Signup funnel"></sakuga-funnel>
+    </div>
+    <div class="tile"><sakuga-segmented><option selected>Ship</option><option>Hold</option><option>Review</option></sakuga-segmented><sakuga-hold>Hold to publish</sakuga-hold><sakuga-confetti id="party">🎉 Ship episode 3</sakuga-confetti></div>
+  </main>
+</div>
+<script src="../button/button.js"></script>
+<script src="../checkbox/checkbox.js"></script>
+<script>for (const f of ['stats', 'charts', 'data', 'nav', 'feedback', 'inputs', 'people', 'widgets', 'layout', 'game']) document.write(`<script src="../dash/${f}.js"><\/script>`);</script>
+<script>
+// pretend live data
+const $ = (s) => document.querySelector(s), r = (a, b) => a + Math.random() * (b - a);
+setInterval(() => { $('#rev').set(Math.round($('#rev').v + r(-500, 2500))); $('#users').set(Math.round($('#users').v + r(-20, 90))); $('#frames').set(Math.round($('#frames').v + r(5, 60))); $('#fps').set(+r(22.5, 24).toFixed(1)); }, 2600);
+setInterval(() => { $('#cpu').set(Math.round(r(30, 98))); const e = $('#ep'); e.set(Math.min(100, e.v + 4)); }, 3300);
+document.querySelector('sakuga-hold').addEventListener('confirm', () => $('#party').fire());
+document.querySelector('sakuga-hp').addEventListener('defeated', () => $('#party').fire());
+</script>
+</body>
+</html>
