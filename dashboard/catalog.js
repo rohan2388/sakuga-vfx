@@ -61,3 +61,13 @@ C('Inputs', 'sakuga-otp', 'Type 1234 (anything else shakes).', '<sakuga-otp expe
 C('Inputs', 'sakuga-textarea', 'Type past the limit.', '<sakuga-textarea maxlength="60"></sakuga-textarea>');
 C('Inputs', 'sakuga-upload', 'Drop a file on it, or click.', '<sakuga-upload></sakuga-upload>');
 C('Inputs', 'sakuga-knob', 'Drag up or down, scroll, or use arrows.', '<sakuga-knob value="40"></sakuga-knob>');
+C('People', 'sakuga-avatar', 'Hover and click a face.', '<sakuga-avatar name="Aiko Tanaka" status="online"></sakuga-avatar><sakuga-avatar name="Ren Mori" status="busy" size="60"></sakuga-avatar><sakuga-avatar name="Mika Sato" status="away" size="40"></sakuga-avatar>');
+C('People', 'sakuga-avatar-stack', 'Hover to fan them out.', '<sakuga-avatar-stack></sakuga-avatar-stack>');
+C('People', 'sakuga-user-card', 'Click to flip it.', '<sakuga-user-card></sakuga-user-card>');
+C('People', 'sakuga-presence', 'Statuses change by themselves.', '<sakuga-presence demo></sakuga-presence>');
+C('People', 'sakuga-chat', 'Send a message.', '<sakuga-chat></sakuga-chat>');
+C('People', 'sakuga-comment', 'Like it, reply to it.', '<sakuga-comment></sakuga-comment>');
+C('People', 'sakuga-reactions', 'Tap a reaction.', '<sakuga-reactions></sakuga-reactions>');
+C('People', 'sakuga-poll', 'Vote once.', '<sakuga-poll question="Best frame rate?"><option votes="12">On twos</option><option votes="7">On ones</option><option votes="3">On threes</option></sakuga-poll>');
+C('People', 'sakuga-vote', 'Up or down.', '<sakuga-vote score="42"></sakuga-vote>');
+C('People', 'sakuga-follow', 'Follow, unfollow.', '<sakuga-follow></sakuga-follow>');
