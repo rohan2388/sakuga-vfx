@@ -232,6 +232,206 @@
         }
       ],
       "docs": "Sakuga Tooltip is a plain script that registers a custom element. Load /sakuga-vfx/tooltip.js with a script tag (not a module), then use <sakuga-tooltip text=\"Helpful hint!\"></sakuga-tooltip>. Opens on hover, focus and tap; Escape closes it. More: https://sakuga-vfx.vercel.app"
+    },
+    {
+      "name": "dash-stats",
+      "type": "registry:file",
+      "title": "Sakuga Dashboard Stats",
+      "description": "ten number widgets that react like anime when their numbers move. One file, no dependencies, defines <sakuga-stat>, <sakuga-delta>, <sakuga-sparkline>, <sakuga-gauge>, <sakuga-ring>, <sakuga-meter>, <sakuga-odometer>, <sakuga-countdown>, <sakuga-clock>, <sakuga-trend>.",
+      "categories": [
+        "dashboard",
+        "stats",
+        "anime",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "dash/stats.js",
+          "type": "registry:file",
+          "target": "~/public/sakuga-vfx/dash-stats.js"
+        }
+      ],
+      "docs": "Load /sakuga-vfx/dash-stats.js with a plain script tag (not a module). Each element is documented in a comment above its class in the file. Catalog: https://sakuga-vfx.vercel.app/dashboard/"
+    },
+    {
+      "name": "dash-charts",
+      "type": "registry:file",
+      "title": "Sakuga Dashboard Charts",
+      "description": "ten charts whose marks land like impact frames. One file, no dependencies, defines <sakuga-bar-chart>, <sakuga-line-chart>, <sakuga-area-chart>, <sakuga-pie-chart>, <sakuga-donut-chart>, <sakuga-heatmap>, <sakuga-scatter>, <sakuga-radar>, <sakuga-funnel>, <sakuga-stacked-bar>.",
+      "categories": [
+        "dashboard",
+        "charts",
+        "anime",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "dash/charts.js",
+          "type": "registry:file",
+          "target": "~/public/sakuga-vfx/dash-charts.js"
+        }
+      ],
+      "docs": "Load /sakuga-vfx/dash-charts.js with a plain script tag (not a module). Each element is documented in a comment above its class in the file. Catalog: https://sakuga-vfx.vercel.app/dashboard/"
+    },
+    {
+      "name": "dash-data",
+      "type": "registry:file",
+      "title": "Sakuga Dashboard Data",
+      "description": "ten ways to show records, with rows that slide in on springs and react when touched. One file, no dependencies, defines <sakuga-table>, <sakuga-list>, <sakuga-leaderboard>, <sakuga-timeline>, <sakuga-feed>, <sakuga-tree>, <sakuga-accordion>, <sakuga-pagination>, <sakuga-tag>, <sakuga-keyvalue>.",
+      "categories": [
+        "dashboard",
+        "data",
+        "anime",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "dash/data.js",
+          "type": "registry:file",
+          "target": "~/public/sakuga-vfx/dash-data.js"
+        }
+      ],
+      "docs": "Load /sakuga-vfx/dash-data.js with a plain script tag (not a module). Each element is documented in a comment above its class in the file. Catalog: https://sakuga-vfx.vercel.app/dashboard/"
+    },
+    {
+      "name": "dash-nav",
+      "type": "registry:file",
+      "title": "Sakuga Dashboard Navigation",
+      "description": "ten ways to move around a dashboard, each with a marker that skids, stretches and lands. One file, no dependencies, defines <sakuga-navbar>, <sakuga-sidebar>, <sakuga-breadcrumb>, <sakuga-menu>, <sakuga-dropdown>, <sakuga-segmented>, <sakuga-stepper>, <sakuga-command>, <sakuga-fab>, <sakuga-link>.",
+      "categories": [
+        "dashboard",
+        "nav",
+        "anime",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "dash/nav.js",
+          "type": "registry:file",
+          "target": "~/public/sakuga-vfx/dash-nav.js"
+        }
+      ],
+      "docs": "Load /sakuga-vfx/dash-nav.js with a plain script tag (not a module). Each element is documented in a comment above its class in the file. Catalog: https://sakuga-vfx.vercel.app/dashboard/"
+    },
+    {
+      "name": "dash-feedback",
+      "type": "registry:file",
+      "title": "Sakuga Dashboard Feedback",
+      "description": "ten ways to tell someone something happened, sold like anime. One file, no dependencies, defines <sakuga-alert>, <sakuga-banner>, <sakuga-badge>, <sakuga-spinner>, <sakuga-skeleton>, <sakuga-empty>, <sakuga-modal>, <sakuga-drawer>, <sakuga-bell>, <sakuga-hold>.",
+      "categories": [
+        "dashboard",
+        "feedback",
+        "anime",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "dash/feedback.js",
+          "type": "registry:file",
+          "target": "~/public/sakuga-vfx/dash-feedback.js"
+        }
+      ],
+      "docs": "Load /sakuga-vfx/dash-feedback.js with a plain script tag (not a module). Each element is documented in a comment above its class in the file. Catalog: https://sakuga-vfx.vercel.app/dashboard/"
+    },
+    {
+      "name": "dash-inputs",
+      "type": "registry:file",
+      "title": "Sakuga Dashboard Inputs",
+      "description": "ten form controls for filters and settings, each with its own hit. One file, no dependencies, defines <sakuga-search>, <sakuga-number>, <sakuga-datepicker>, <sakuga-color>, <sakuga-range>, <sakuga-chips>, <sakuga-otp>, <sakuga-textarea>, <sakuga-upload>, <sakuga-knob>.",
+      "categories": [
+        "dashboard",
+        "inputs",
+        "anime",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "dash/inputs.js",
+          "type": "registry:file",
+          "target": "~/public/sakuga-vfx/dash-inputs.js"
+        }
+      ],
+      "docs": "Load /sakuga-vfx/dash-inputs.js with a plain script tag (not a module). Each element is documented in a comment above its class in the file. Catalog: https://sakuga-vfx.vercel.app/dashboard/"
+    },
+    {
+      "name": "dash-people",
+      "type": "registry:file",
+      "title": "Sakuga Dashboard People",
+      "description": "ten social bits for team dashboards, with reactions that pop. One file, no dependencies, defines <sakuga-avatar>, <sakuga-avatar-stack>, <sakuga-user-card>, <sakuga-presence>, <sakuga-chat>, <sakuga-comment>, <sakuga-reactions>, <sakuga-poll>, <sakuga-vote>, <sakuga-follow>.",
+      "categories": [
+        "dashboard",
+        "people",
+        "anime",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "dash/people.js",
+          "type": "registry:file",
+          "target": "~/public/sakuga-vfx/dash-people.js"
+        }
+      ],
+      "docs": "Load /sakuga-vfx/dash-people.js with a plain script tag (not a module). Each element is documented in a comment above its class in the file. Catalog: https://sakuga-vfx.vercel.app/dashboard/"
+    },
+    {
+      "name": "dash-widgets",
+      "type": "registry:file",
+      "title": "Sakuga Dashboard Widgets",
+      "description": "ten self-contained dashboard tiles with something always moving. One file, no dependencies, defines <sakuga-weather>, <sakuga-schedule>, <sakuga-todo>, <sakuga-kanban>, <sakuga-player>, <sakuga-pomodoro>, <sakuga-battery>, <sakuga-status>, <sakuga-note>, <sakuga-map>.",
+      "categories": [
+        "dashboard",
+        "widgets",
+        "anime",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "dash/widgets.js",
+          "type": "registry:file",
+          "target": "~/public/sakuga-vfx/dash-widgets.js"
+        }
+      ],
+      "docs": "Load /sakuga-vfx/dash-widgets.js with a plain script tag (not a module). Each element is documented in a comment above its class in the file. Catalog: https://sakuga-vfx.vercel.app/dashboard/"
+    },
+    {
+      "name": "dash-layout",
+      "type": "registry:file",
+      "title": "Sakuga Dashboard Layout",
+      "description": "ten containers and small utilities that hold a dashboard together. One file, no dependencies, defines <sakuga-card>, <sakuga-panel>, <sakuga-divider>, <sakuga-carousel>, <sakuga-ticker>, <sakuga-kbd>, <sakuga-copy>, <sakuga-icon-button>, <sakuga-callout>, <sakuga-split>.",
+      "categories": [
+        "dashboard",
+        "layout",
+        "anime",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "dash/layout.js",
+          "type": "registry:file",
+          "target": "~/public/sakuga-vfx/dash-layout.js"
+        }
+      ],
+      "docs": "Load /sakuga-vfx/dash-layout.js with a plain script tag (not a module). Each element is documented in a comment above its class in the file. Catalog: https://sakuga-vfx.vercel.app/dashboard/"
+    },
+    {
+      "name": "dash-game",
+      "type": "registry:file",
+      "title": "Sakuga Dashboard Game",
+      "description": "ten gamified bits for streaks, goals and celebrations, at full anime volume. One file, no dependencies, defines <sakuga-xp>, <sakuga-levelup>, <sakuga-achievement>, <sakuga-streak>, <sakuga-combo>, <sakuga-hp>, <sakuga-loot>, <sakuga-dice>, <sakuga-wheel>, <sakuga-confetti>.",
+      "categories": [
+        "dashboard",
+        "game",
+        "anime",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "dash/game.js",
+          "type": "registry:file",
+          "target": "~/public/sakuga-vfx/dash-game.js"
+        }
+      ],
+      "docs": "Load /sakuga-vfx/dash-game.js with a plain script tag (not a module). Each element is documented in a comment above its class in the file. Catalog: https://sakuga-vfx.vercel.app/dashboard/"
     }
   ]
 }

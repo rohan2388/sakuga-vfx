@@ -91,3 +91,13 @@ C('Layout', 'sakuga-copy', 'Copy the command.', '<sakuga-copy text="npx shadcn a
 C('Layout', 'sakuga-icon-button', 'Plain ones spin; toggles switch.', '<sakuga-icon-button label="Refresh">↻</sakuga-icon-button><sakuga-icon-button label="Star" toggle>★</sakuga-icon-button><sakuga-icon-button label="Pin" toggle pressed>📌</sakuga-icon-button>');
 C('Layout', 'sakuga-callout', 'Click to say it again.', '<sakuga-callout>Psst! Revenue is up 24% this week!</sakuga-callout><sakuga-callout shout>Deadline TODAY!</sakuga-callout>');
 C('Layout', 'sakuga-split', 'Drag the gutter and let go.', '<sakuga-split><b slot="start">Filters</b><span slot="end">Results go here.</span></sakuga-split>', true);
+C('Game', 'sakuga-xp', 'Click the bar to gain XP and level up.', '<sakuga-xp level="7" value="820"></sakuga-xp>');
+C('Game', 'sakuga-levelup', 'Click for the moment.', '<sakuga-levelup level="12"></sakuga-levelup>');
+C('Game', 'sakuga-achievement', 'Click a locked one: it rattles. Click an unlocked one to replay.', '<div style="display:grid;gap:10px"><sakuga-achievement></sakuga-achievement><sakuga-achievement locked icon="🔒" heading="Ship 100 cuts" text="42 / 100" reward="+1000 XP"></sakuga-achievement></div>');
+C('Game', 'sakuga-streak', 'Click to extend the streak.', '<sakuga-streak days="6"></sakuga-streak>');
+C('Game', 'sakuga-combo', 'Mash HIT! Stop and it drops.', '<sakuga-combo></sakuga-combo>');
+C('Game', 'sakuga-hp', 'Click the bar to deal damage.', '<sakuga-hp name="Q4 Deadline" value="1000"></sakuga-hp>');
+C('Game', 'sakuga-loot', 'Open it.', '<sakuga-loot></sakuga-loot>');
+C('Game', 'sakuga-dice', 'Roll. A six lands ドン!', '<sakuga-dice></sakuga-dice>');
+C('Game', 'sakuga-wheel', 'Spin it.', '<sakuga-wheel></sakuga-wheel>');
+C('Game', 'sakuga-confetti', 'Celebrate.', '<sakuga-confetti></sakuga-confetti>');

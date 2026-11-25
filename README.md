@@ -101,3 +101,24 @@ An agent with the skill gets a reasonable first pass. These took many rounds of 
 ## License
 
 MIT. See [LICENSE](LICENSE). The sound-effect lettering and the toggle frames were generated with GPT Image (through Higgsfield) for this project.
+
+## The dashboard kit: 100 more
+
+A hundred dashboard components in the same style, in ten files of ten. Load a file with a plain script tag and every element in it is defined. They share the core (springs, effects, lettering) and a small dashboard kit (`dash/kit.js`: the card look, a jelly spring and effect combos); `node tools/build.mjs` stamps both into each file, so any one file still works on its own.
+
+See them all in the [catalog](dashboard/), or put together in a [live dashboard](dashboard/board.html).
+
+| category | file | elements |
+|---|---|---|
+| Stats | [`dash/stats.js`](dash/stats.js) | `<sakuga-stat>` `<sakuga-delta>` `<sakuga-sparkline>` `<sakuga-gauge>` `<sakuga-ring>` `<sakuga-meter>` `<sakuga-odometer>` `<sakuga-countdown>` `<sakuga-clock>` `<sakuga-trend>` |
+| Charts | [`dash/charts.js`](dash/charts.js) | `<sakuga-bar-chart>` `<sakuga-line-chart>` `<sakuga-area-chart>` `<sakuga-pie-chart>` `<sakuga-donut-chart>` `<sakuga-heatmap>` `<sakuga-scatter>` `<sakuga-radar>` `<sakuga-funnel>` `<sakuga-stacked-bar>` |
+| Data | [`dash/data.js`](dash/data.js) | `<sakuga-table>` `<sakuga-list>` `<sakuga-leaderboard>` `<sakuga-timeline>` `<sakuga-feed>` `<sakuga-tree>` `<sakuga-accordion>` `<sakuga-pagination>` `<sakuga-tag>` `<sakuga-keyvalue>` |
+| Navigation | [`dash/nav.js`](dash/nav.js) | `<sakuga-navbar>` `<sakuga-sidebar>` `<sakuga-breadcrumb>` `<sakuga-menu>` `<sakuga-dropdown>` `<sakuga-segmented>` `<sakuga-stepper>` `<sakuga-command>` `<sakuga-fab>` `<sakuga-link>` |
+| Feedback | [`dash/feedback.js`](dash/feedback.js) | `<sakuga-alert>` `<sakuga-banner>` `<sakuga-badge>` `<sakuga-spinner>` `<sakuga-skeleton>` `<sakuga-empty>` `<sakuga-modal>` `<sakuga-drawer>` `<sakuga-bell>` `<sakuga-hold>` |
+| Inputs | [`dash/inputs.js`](dash/inputs.js) | `<sakuga-search>` `<sakuga-number>` `<sakuga-datepicker>` `<sakuga-color>` `<sakuga-range>` `<sakuga-chips>` `<sakuga-otp>` `<sakuga-textarea>` `<sakuga-upload>` `<sakuga-knob>` |
+| People | [`dash/people.js`](dash/people.js) | `<sakuga-avatar>` `<sakuga-avatar-stack>` `<sakuga-user-card>` `<sakuga-presence>` `<sakuga-chat>` `<sakuga-comment>` `<sakuga-reactions>` `<sakuga-poll>` `<sakuga-vote>` `<sakuga-follow>` |
+| Widgets | [`dash/widgets.js`](dash/widgets.js) | `<sakuga-weather>` `<sakuga-schedule>` `<sakuga-todo>` `<sakuga-kanban>` `<sakuga-player>` `<sakuga-pomodoro>` `<sakuga-battery>` `<sakuga-status>` `<sakuga-note>` `<sakuga-map>` |
+| Layout | [`dash/layout.js`](dash/layout.js) | `<sakuga-card>` `<sakuga-panel>` `<sakuga-divider>` `<sakuga-carousel>` `<sakuga-ticker>` `<sakuga-kbd>` `<sakuga-copy>` `<sakuga-icon-button>` `<sakuga-callout>` `<sakuga-split>` |
+| Game | [`dash/game.js`](dash/game.js) | `<sakuga-xp>` `<sakuga-levelup>` `<sakuga-achievement>` `<sakuga-streak>` `<sakuga-combo>` `<sakuga-hp>` `<sakuga-loot>` `<sakuga-dice>` `<sakuga-wheel>` `<sakuga-confetti>` |
+
+Data goes in as attributes (`values="3,5,2"`, `labels="a,b,c"`), child `<option>`s, or JSON in a `data` attribute, and most have a method for live updates (`set()`, `push()`, `add()`, `gain()`, `damage()`...). Each class has a comment above it in its file saying what it does and how to drive it. Components that report something fire `change`, `select` or `sakuga:done` with the details in `e.detail`.
